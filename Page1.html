@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the paragraph content using Javascript</title>
+    <style>
+        .bt
+{
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 45%;
+}
+a
+{
+    color: #7cc278;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: none;
+    color: brown;
+}
+    </style>
+</head>
+<body>
+
+    <div style="background-image:url('1.jpg');color:blanchedalmond; padding: 20px 20px; border-radius: 10px">
+        <h1>Display date and time using JavaScript </h1>
+        <h2>JavaScript new Date()</h2>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+<br>
+ <hr><hr>
+<br><br>
+
+    
+        <h1>Change the paragraph content using java script</h1>
+        <p>
+            The Jews who descended from Abraham were never really the nation we associate with greatness. 
+             They did not conquer and build a great empire like the Romans did or build large monuments like the Egyptians did with the pyramids. 
+             Their fame comes from the Law and Book which they wrote;
+              from some remarkable individuals that were Jewish; and that they have survived as a somewhat different people group for thousands of years.  
+              Their greatness is not because of anything they did, but rather what was done to and through them.  
+              The promise says repeatedly “I will …” – that would be the power behind the promise. 
+               Their unique greatness happened because God made it happen rather than some ability, conquest or power of their own.
+        </p><br>
+        <p>
+            The promise to Abraham came true because he trusted a promise and chose to live differently than others. 
+            Think how likely it was for this promise to have failed, but instead it has happened, and is continuing to unfold, as it was stated  thousands of years ago. 
+             The case is strong that the promise came true only because of the power and authority of the Promise-Maker.
+        </p>
+              
+                <h2>Add more lines  (by clicking the button below) :-</h2>
+                <div style="width: 100%; height:350px; text-align: justify;" id="story"></div>
+                <form>
+                    <label>Add your own thoughts:-</label><input id="word"></input>
+                    <input type="button" value="submit" id="submitButton"></input>
+                </form>
+        </div>
+    
+    
+
+
+    <script>
+        var word = document.getElementById('word'),
+    originalStory = document.getElementById('story'),
+    button = document.getElementById("submitButton");
+    
+button.onclick = function(){
+    replaceStory(word.value);
+};
+
+var replaceStory = function(userWord) {
+    var story = ( userWord);
+
+    return originalStory.innerHTML = customSplit(story,100);
+};
+
+function customSplit(str, maxLength){
+    if(str.length <= maxLength)
+        return str;
+    var reg = new RegExp(".{1," + maxLength + "}","g");
+    var parts = str.match(reg);
+    return parts.join('\n');
+}
+    </script>
+    <button class="bt" style="background-color: maroon;"><a href="index.html" style="color: blanchedalmond;">Back to Home Page</a></button>
+</body>
+</html>
